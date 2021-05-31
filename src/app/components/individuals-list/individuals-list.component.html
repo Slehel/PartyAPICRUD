@@ -1,0 +1,15 @@
+<div class="list row">
+  <div class="col-md-6" >
+    <h4>Individuals List</h4>
+    <mat-list class="list-group">
+      <mat-list-item class="list-group-item"  *ngFor="let individual of individuals; let i = index"
+        [class.active]="i == currentIndex" angular-textcolor="black" (click)="setActiveIndividual(individual, i)">{{ individual.aristocratictitle }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentIndividual">
+      <app-individual-details (refreshList)="refreshList()" [individual]="currentIndividual"></app-individual-details>
+    </div>
+  </div>
+</div>

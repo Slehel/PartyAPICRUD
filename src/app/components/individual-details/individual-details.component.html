@@ -1,0 +1,27 @@
+<div *ngIf="currentIndividual" class="edit-form" style="margin-bottom: 150px;">
+  <mat-progress-spinner></mat-progress-spinner>
+  <h4>Individual</h4>
+  <form>
+    <mat-card class="form-group">
+      <label for="aristocratictitle">aristocratictitle</label>
+      <input type="text" class="form-control" id="aristocratictitle" [(ngModel)]="currentIndividual.aristocratictitle" name="aristocratictitle" />
+
+      <label for="birthdate">birthdate</label>
+      <input type="text" class="form-control" id="birthdate" [(ngModel)]="currentIndividual.birthdate" name="birthdate" />
+
+      <label for="birthcountry">birthcountry</label>
+      <input type="text" class="form-control" id="birthcountry" [(ngModel)]="currentIndividual.birthcountry"
+        name="birthcountry" />
+
+
+      <button style="margin-top: 15px;margin-right: 10px;" mat-raised-button (click)="deleteIndividual()">
+        Delete
+      </button>
+
+      <button mat-raised-button type="submit" (click)="updateIndividual()">
+        Update
+      </button>
+
+
+    </mat-card>
+  </form>

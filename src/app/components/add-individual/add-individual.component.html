@@ -1,0 +1,21 @@
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <mat-card class="form-group">
+      <mat-label for="aristocratictitle">aristocratictitle</mat-label>
+      <input matInput type="text" class="form-control" id="aristocratictitle" required [(ngModel)]="individual.aristocratictitle" name="aristocratictitle" />
+
+      <mat-label for="birthdate">birthdate</mat-label>
+      <input matInput type="text" class="form-control" id="birthdate" required [(ngModel)]="individual.birthdate" name="birthdate" />
+
+      <mat-label for="birthcountry">birthcountry</mat-label>
+      <input matInput required type="text" class="form-control" id="birthcountry" [(ngModel)]="individual.birthcountry"
+        name="birthcountry" />
+      <button style="margin-top: 15px;" mat-raised-button (click)="saveIndividual()">Submit</button>
+    </mat-card>
+  </div>
+
+  <div *ngIf="submitted" class="d-flex jusitify-items-center">
+    <h4>You submitted successfully!</h4>
+    <button mat-raised-button (click)="newIndividual()">Add</button>
+  </div>
+</div>
